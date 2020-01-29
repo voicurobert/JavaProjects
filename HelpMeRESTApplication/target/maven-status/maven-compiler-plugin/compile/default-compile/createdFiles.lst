@@ -1,0 +1,4 @@
+rvo/helpmerestapplication/database/MongoDBManager.class
+rvo/helpmerestapplication/rest/MongoCRUDRest.class
+rvo/helpmerestapplication/ApplicationInitialiser.class
+rvo/helpmerestapplication/rest/RestApplication.class
