@@ -6,6 +6,8 @@
 
 package main.java.entities;
 
+import java.util.ArrayList;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,7 +25,7 @@ public class Document {
     
     private String name;
     
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST, optional = false)
     @JoinColumn(name = "person")
     private Person person;
 

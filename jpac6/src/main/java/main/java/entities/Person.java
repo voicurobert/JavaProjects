@@ -6,10 +6,13 @@
 
 package main.java.entities;
 
+import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Person {
@@ -20,6 +23,9 @@ public class Person {
     
     private String name;
 
+    @OneToMany(mappedBy = "person", cascade = CascadeType.PERSIST)
+    private Collection<Document> documents;
+    
     public int getId() {
         return id;
     }
@@ -34,6 +40,14 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Collection<Document> getDocuments() {
+        return documents;
+    }
+
+    public void setDocuments(Collection<Document> documents) {
+        this.documents = documents;
     }
     
     
