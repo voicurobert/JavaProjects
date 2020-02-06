@@ -1,18 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package main.java;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-/**
- *
- * @author robert
- */
+import main.java.entities.Department;
+import main.java.entities.DepartmentDetails;
+import main.java.entities.Employee;
+
+
 public class Main {
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("my-persistence-unit");
@@ -20,6 +16,19 @@ public class Main {
         
         em.getTransaction().begin();
         
+        Department d1 = new Department();
+        d1.setName("bla");
+        
+        DepartmentDetails dd = new DepartmentDetails();
+        dd.setContractNo("1");
+        dd.setDepartment(d1);
+        
+        Employee e = new Employee();
+        e.setDepartmentDetails(dd);
+        e.setName("E");
+        
+        em.persist(e);
+        em.persist(d1);
         
         em.getTransaction().commit();
         em.close();
