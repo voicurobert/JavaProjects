@@ -7,12 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import main.java.entities.Department;
-import main.java.entities.DepartmentDetails;
-import main.java.entities.Employee;
-import main.java.entities.Professor;
-import main.java.entities.ProfessorDetails;
-import main.java.entities.Student;
+import main.java.entities.*;
 
 
 public class Main {
@@ -36,7 +31,8 @@ public class Main {
         em.persist(e);
         em.persist(d1);
         */
-        
+
+        /*
         Professor p = new Professor();
         p.setName("professor");
         
@@ -49,7 +45,19 @@ public class Main {
         
         em.persist(p);
         em.persist(s);
-        
+
+         */
+        Person p = new Person();
+        p.setName("P");
+        p.setPhoneNumbers(Arrays.asList("22313", "1312313", "3314"));
+
+        Document d = new Document();
+        d.setNumber("123123");
+        d.setReference("ss21");
+
+        p.setDocuments(Arrays.asList(d));
+        em.persist(p);
+
         em.getTransaction().commit();
         em.close();
     }

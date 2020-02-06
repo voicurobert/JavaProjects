@@ -6,11 +6,7 @@
 
 package main.java.entities;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Student {
@@ -22,6 +18,14 @@ public class Student {
     private String name;
 
     @Embedded
+    @AssociationOverride(
+            name = "professors",
+            joinTable = @JoinTable(
+                    name = "student_prof",
+                    joinColumns = @JoinColumn(name = "student"),
+                    inverseJoinColumns = @JoinColumn(name = "prof")
+            )
+    )
     private ProfessorDetails professorDetails;
     
     public ProfessorDetails getProfessorDetails() {
