@@ -6,6 +6,7 @@
 
 package main.java.entities;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,6 +21,17 @@ public class Student {
     
     private String name;
 
+    @Embedded
+    private ProfessorDetails professorDetails;
+    
+    public ProfessorDetails getProfessorDetails() {
+		return professorDetails;
+	}
+    
+    public void setProfessorDetails(ProfessorDetails professorDetails) {
+		this.professorDetails = professorDetails;
+	}
+    
     public int getId() {
         return id;
     }
