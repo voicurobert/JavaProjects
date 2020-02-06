@@ -30,6 +30,8 @@ public class Main {
         em.persist(e);
         em.persist(d1);
         
+        
+        
         em.getTransaction().commit();
         em.close();
     }
