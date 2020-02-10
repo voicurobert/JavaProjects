@@ -12,7 +12,7 @@ public class Department {
 
     private String name;
 
-    @OneToMany
+    @OneToMany(mappedBy = "department")
     @MapKey(name = "id")
     private Map<Integer, Employee> employees;
 
