@@ -47,6 +47,11 @@ public class Main {
         e.setDepartment(d);
 
         d.setEmployees(new HashMap<>());
+        d.getEmployees().put(0, e); // autoincremented - the key makes no sense if auto increment is set
+
+        em.persist(d);
+        em.persist(e);
+
 
         em.getTransaction().commit();
         em.close();
