@@ -1,21 +1,15 @@
 package main;
 
 
-import javax.persistence.*;
-
+import services.ProductService;
 
 public class Main {
-    
+
 
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("my-persistence-unit");
-        EntityManager em = emf.createEntityManager();
-
-        em.getTransaction().begin();
-
-
-
-        em.getTransaction().commit();
-        em.close();
+        ProductService service = new ProductService();
+        service.addProduct("Beer");
+        service.addProduct("Peanuts");
+        service.findProducts().forEach(System.out::println);
     }
 }
