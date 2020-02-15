@@ -101,6 +101,6 @@
         </plugins>
     </build>
 
-    <name>jpac11</name>
+    <name>jpac11_entityManager</name>
 </project>
 

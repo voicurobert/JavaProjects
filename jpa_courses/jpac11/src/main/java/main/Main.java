@@ -2,7 +2,6 @@ package main;
 
 
 import main.entities.Product;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -13,7 +12,7 @@ public class Main {
     /*
     persist() - add instances to the context
 
-    flush()
+    flush() - forces the implementation to make the changes from the entity manager context before the commit
 
     find() - retrieve an instance from the database using its id
 
@@ -40,9 +39,11 @@ public class Main {
         em.getTransaction().begin();
 
         Product p = new Product();
-        p.setId(10);
+        p.setId(11);
         p.setName("P1");
+
         em.persist(p);
+        em.flush();
 
         System.out.println(":)");
 
