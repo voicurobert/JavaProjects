@@ -7,8 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="jpac11" />
-        <module name="jpac10" />
-        <module name="jpac9" />
       </profile>
     </annotationProcessing>
   </component>
