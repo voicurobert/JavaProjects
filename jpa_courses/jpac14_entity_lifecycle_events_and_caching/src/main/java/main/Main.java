@@ -12,7 +12,7 @@ public class Main {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("my-persistence-unit");
         EntityManager em = emf.createEntityManager();
 
-        em.getTransaction().begin();;
+        em.getTransaction().begin();
 
 
         em.getTransaction().commit();
