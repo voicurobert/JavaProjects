@@ -3,6 +3,7 @@ package main;
 import beans.MyBean;
 import config.ProjectConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import services.ProductDeliveryService;
 
 public class Main {
 
@@ -31,8 +32,11 @@ public class Main {
 //            System.out.println(bb2.getText());
 
             // stereotype
-            MyBean b1 = context.getBean(MyBean.class);
-            System.out.println(b1.getText());
+//            MyBean b1 = context.getBean(MyBean.class);
+//            System.out.println(b1.getText());
+
+            ProductDeliveryService service = context.getBean(ProductDeliveryService.class);
+            service.addSomeProducts();
         }
     }
 
