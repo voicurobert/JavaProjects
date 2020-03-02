@@ -7,8 +7,14 @@ import repositories.ProductRepository;
 @Service
 public class ProductDeliveryService {
 
+
+    private final ProductRepository productRepository;
+
+    // constructor injection
     @Autowired
-    private ProductRepository productRepository;
+    public ProductDeliveryService( ProductRepository productRepository ) {
+        this.productRepository = productRepository;
+    }
 
     public void addSomeProducts(){
         productRepository.add();
