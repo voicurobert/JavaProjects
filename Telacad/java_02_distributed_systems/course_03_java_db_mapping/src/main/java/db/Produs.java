@@ -1,11 +1,9 @@
 package db;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "PRODUSE")
 public class Produs {
 
     @Id
@@ -28,5 +26,13 @@ public class Produs {
 
     public void setNume(String nume) {
         this.nume = nume;
+    }
+
+    @Override
+    public String toString() {
+        return "Produs{" +
+                "id=" + id +
+                ", nume='" + nume + '\'' +
+                '}';
     }
 }
