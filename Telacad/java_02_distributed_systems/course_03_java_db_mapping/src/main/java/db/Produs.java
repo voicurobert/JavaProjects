@@ -7,10 +7,14 @@ import javax.persistence.*;
 public class Produs {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private int id;
 
+    @Column(name = "produs_name")
+    @Basic(fetch = FetchType.LAZY)
     private String nume;
+
+    private double pret;
 
     public int getId() {
         return id;
@@ -28,11 +32,20 @@ public class Produs {
         this.nume = nume;
     }
 
+    public double getPret() {
+        return pret;
+    }
+
+    public void setPret(double pret) {
+        this.pret = pret;
+    }
+
     @Override
     public String toString() {
         return "Produs{" +
                 "id=" + id +
                 ", nume='" + nume + '\'' +
+                ", pret=" + pret +
                 '}';
     }
 }
