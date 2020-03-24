@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.Map;
 
 @Entity
+@Cacheable
 public class Concert {
 
     @Id
@@ -12,6 +13,7 @@ public class Concert {
     private int id;
 
     @ElementCollection
+    @MapKeyTemporal(TemporalType.TIMESTAMP)
     private Map<Date, String> locatii;
 
     public int getId() {
