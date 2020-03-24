@@ -4,6 +4,8 @@
     <persistence-unit name="my-persistence-unit" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
+        <shared-cache-mode>ALL</shared-cache-mode>
+
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/java_2"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
