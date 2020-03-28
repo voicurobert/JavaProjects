@@ -1,4 +1,4 @@
-package server.main;
+package exemplu1.server;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

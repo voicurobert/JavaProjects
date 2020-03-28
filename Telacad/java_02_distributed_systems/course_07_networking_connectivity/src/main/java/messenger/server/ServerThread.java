@@ -23,7 +23,7 @@ public class ServerThread extends Thread {
             while (true) {
                 String message = receiveMessage();
                 // trimit catre toti
-                Server.sendMessageToAll(message);
+                ClientiContainer.sendMessageToAll(message);
             }
         } catch (Exception e) {
             e.printStackTrace();
