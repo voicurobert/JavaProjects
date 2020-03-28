@@ -5,6 +5,7 @@ import send_instance_to_server.user.model.User;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import java.util.List;
+import java.util.Optional;
 
 public class UserDao {
     private EntityManager em;
@@ -13,11 +14,18 @@ public class UserDao {
         this.em = em;
     }
 
-    public User findUserByUsername(String username) {
-        String sql = "select u from user u where u.username = :username";
+    public Optional<User> findUserByUsername(String username) {
+        String sql = "select u from User u where u.username = :username";
         TypedQuery<User> q = em.createQuery(sql, User.class);
         q.setParameter("username", username);
-        List<User> resultList = q.getResultList();
-        return resultList.get(0);
+        try {
+            return Optional.of(q.getSingleResult());
+        } catch (Exception e) {
+            return Optional.empty();
+        }
+    }
+
+    public void addUser(User user) {
+        em.persist(user);
     }
 }
