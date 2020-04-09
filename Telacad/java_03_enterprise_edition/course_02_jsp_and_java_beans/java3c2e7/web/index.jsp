@@ -17,7 +17,7 @@
         if (request.getParameter("color") != null) {
             color = request.getParameter("color");
             Cookie cookie = new Cookie("color", color);
-            cookie.s
+            
             response.addCookie(cookie);
         } else {
             if (request.getCookies() != null) {
