@@ -7,8 +7,9 @@
     </h:head>
     <h:body>
         <h:form>
-            <h:outputText value="#{myBean.text}"/>
-            <h:commandButton value="Apasa"/>
+            <p>Text:<h:inputText value="#{myBean.text}" /></p>
+            <p><h:commandButton value="Apasa" actionListener="#{myBean.afisareText()}"/></p>
+            <p><h:outputText value="#{myBean.text}"/></p>
         </h:form>
     </h:body>
 </html>

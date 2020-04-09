@@ -7,8 +7,10 @@
     </h:head>
     <h:body>
         <h:form>
-            <h:outputText value="#{myBean.text}"/>
-            <h:commandButton value="Apasa"/>
+            <p> Username <h:inputText value="#{user.username}"/> </p>
+            <p> Password <h:inputSecret value="#{user.password}"/> </p>
+            <p> <h:commandLink value="Login"/> </p>
+            <p> <h:outputText value="#{user.loginMessage}"/> </p>
         </h:form>
     </h:body>
 </html>
