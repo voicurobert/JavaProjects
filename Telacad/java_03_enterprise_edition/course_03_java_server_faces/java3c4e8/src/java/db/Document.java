@@ -10,8 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 /**
@@ -20,11 +18,8 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name = "produse")
-@NamedQueries({
-    @NamedQuery(name = "Produs.findAll", query = "select p from Produs")
-})
-public class Produs implements Serializable {
+@Table(name = "document")
+public class Document implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,7 +27,7 @@ public class Produs implements Serializable {
     
     private String nume;
     
-    private double pret;
+    private String descriere;
 
     public int getId() {
         return id;
@@ -50,12 +45,12 @@ public class Produs implements Serializable {
         this.nume = nume;
     }
 
-    public double getPret() {
-        return pret;
+    public String getDescriere() {
+        return descriere;
     }
 
-    public void setPret(double pret) {
-        this.pret = pret;
+    public void setDescriere(String descriere) {
+        this.descriere = descriere;
     }
     
     
