@@ -7,10 +7,14 @@
 package db;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -27,6 +31,12 @@ public class Factura implements Serializable {
     
     private int serie;
 
+    @ManyToOne
+    private Client client;
+    
+    @OneToMany(mappedBy = "factura")
+    private Collection<LinieFactura> liniiFactura = new ArrayList<>();
+    
     public int getId() {
         return id;
     }
@@ -50,6 +60,23 @@ public class Factura implements Serializable {
     public void setSerie(int serie) {
         this.serie = serie;
     }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public Collection<LinieFactura> getLinii() {
+        return liniiFactura;
+    }
+
+    public void setLinii(Collection<LinieFactura> linii) {
+        this.liniiFactura = linii;
+    }
+    
     
     
 }

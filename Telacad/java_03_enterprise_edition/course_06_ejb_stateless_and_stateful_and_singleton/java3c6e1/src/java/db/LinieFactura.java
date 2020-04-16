@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -29,6 +30,9 @@ public class LinieFactura implements Serializable {
     
     private int qty;
 
+    @ManyToOne
+    private Factura factura;
+    
     public int getId() {
         return id;
     }

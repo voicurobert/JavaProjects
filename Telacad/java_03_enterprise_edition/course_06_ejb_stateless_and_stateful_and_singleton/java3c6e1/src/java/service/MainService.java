@@ -7,29 +7,34 @@
 package service;
 
 import dao.ClientDao;
+import dao.FacturaDao;
+import dao.LinieFacturaDao;
 import db.Client;
+import db.LinieFactura;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
+import javax.ejb.Stateless;
 
 /**
  *
  * @author robert
  */
-@Singleton
-@Startup
+@Stateless
 public class MainService {
 
     @EJB
     private ClientDao clientDao;
     
-    @PostConstruct
-    private void init() {
-        adaugaClient();
-    }
+    @EJB
+    private FacturaDao facturaDao;
+    
+    @EJB
+    private LinieFacturaDao linieFacturaDao;
+    
     
     public void adaugaClient() {
         try {

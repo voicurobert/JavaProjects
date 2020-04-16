@@ -6,10 +6,14 @@
 package db;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 
 /**
@@ -27,6 +31,9 @@ public class Client implements Serializable {
     
     private String prenume;
 
+    @OneToMany(mappedBy = "client")
+    private Collection<Factura> facturi = new ArrayList<>();
+    
     public int getId() {
         return id;
     }
@@ -50,6 +57,13 @@ public class Client implements Serializable {
     public void setPrenume(String prenume) {
         this.prenume = prenume;
     }
-    
+
+    public Collection<Factura> getLinii() {
+        return facturi;
+    }
+
+    public void setLinii(Collection<Factura> facturi) {
+        this.facturi = facturi;
+    }
     
 }
