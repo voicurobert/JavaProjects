@@ -9,6 +9,7 @@ package db;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -34,7 +35,7 @@ public class Factura implements Serializable {
     @ManyToOne
     private Client client;
     
-    @OneToMany(mappedBy = "factura")
+    @OneToMany(mappedBy = "factura", cascade = CascadeType.ALL  )
     private Collection<LinieFactura> liniiFactura = new ArrayList<>();
     
     public int getId() {

@@ -27,6 +27,10 @@ public class ClientDao {
     
     public void adaugaClient(Client client) {
         em.persist(client);
-        
+        em.flush();
+    }
+    
+    public Client findClient(int id) {
+        return em.find(Client.class, id);
     }
 }

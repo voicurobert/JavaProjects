@@ -3,36 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package db;
+
+package dto;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collection;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-
 
 /**
  *
  * @author robert
  */
-@Entity
-public class Client implements Serializable {
+public class ClientDTO implements Serializable {
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     
     private String nume;
     
     private String prenume;
 
-    @OneToMany(mappedBy = "client")
-    private Collection<Factura> facturi = new ArrayList<>();
-    
     public int getId() {
         return id;
     }
@@ -56,14 +43,6 @@ public class Client implements Serializable {
     public void setPrenume(String prenume) {
         this.prenume = prenume;
     }
-
-    public Collection<Factura> getFacturi() {
-        return facturi;
-    }
-
-    public void setFacturi(Collection<Factura> facturi) {
-        this.facturi = facturi;
-    }
-
+    
     
 }

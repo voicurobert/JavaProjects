@@ -6,6 +6,7 @@
 
 package dao;
 
+import db.Factura;
 import java.io.Serializable;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -20,4 +21,8 @@ public class FacturaDao implements Serializable {
 
     @PersistenceContext
     private EntityManager em;
+    
+    public void adaugaFactura(Factura factura) {
+        em.persist(factura);
+    }
 }
