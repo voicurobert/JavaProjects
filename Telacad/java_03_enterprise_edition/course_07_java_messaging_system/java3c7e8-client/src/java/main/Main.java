@@ -13,7 +13,7 @@ import javax.xml.ws.WebServiceRef;
  */
 public class Main {
 
-    @WebServiceRef(wsdlLocation = "https://desktop-vdrg7v1:8181/MyServiceWSService/MyServiceWS?wsdl")
+    @WebServiceRef(wsdlLocation = "http://192.168.1.103:8080/MyServiceWSService/MyServiceWS?wsdl")
     private static MyServiceWSService service;
 
     /**
