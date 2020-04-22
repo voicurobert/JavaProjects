@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="https://desktop-vdrg7v1:8181/MyServiceWSService/MyServiceWS?wsdl" uri="src/conf/xml-resources/web-service-references/MyServiceWS/wsdl/desktop-vdrg7v1_8181/MyServiceWSService/MyServiceWS.wsdl"/>
+    <system systemId="https://desktop-vdrg7v1:8181/MyServiceWSService/MyServiceWS?xsd=1" uri="src/conf/xml-resources/web-service-references/MyServiceWS/wsdl/desktop-vdrg7v1_8181/MyServiceWSService/MyServiceWS.xsd_1.xsd"/>
+</catalog>
