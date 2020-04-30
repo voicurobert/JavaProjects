@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="https://192.168.1.100:8181/MainServiceWSService/MainServiceWS?wsdl" uri="wsdl/192.168.1.100_8181/MainServiceWSService/MainServiceWS.wsdl"/>
+    <system systemId="https://192.168.1.100:8181/MainServiceWSService/MainServiceWS?xsd=1" uri="wsdl/192.168.1.100_8181/MainServiceWSService/MainServiceWS.xsd_1.xsd"/>
+</catalog>
