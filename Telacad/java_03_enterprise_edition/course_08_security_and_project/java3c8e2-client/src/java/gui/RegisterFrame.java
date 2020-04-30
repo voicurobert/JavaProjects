@@ -17,7 +17,7 @@ public class RegisterFrame extends javax.swing.JFrame {
     
     public RegisterFrame() {
         initComponents();
-        jButton1.addActionListener((e) -> register());
+        jButton1.addActionListener(e -> register());
     }
 
     private void register() {

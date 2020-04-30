@@ -19,6 +19,22 @@
                     <file>${reference.java3c8e2-2-ejb.dist-ear}</file>
                     <path-in-war>/</path-in-war>
                 </library>
+                <library>
+                    <file>${reference.java3c8e2-web.dist-ear}</file>
+                    <path-in-war>/</path-in-war>
+                </library>
+                <library>
+                    <file>${reference.java3c8e2-web.dist-ear}</file>
+                    <path-in-war>/</path-in-war>
+                </library>
+                <library>
+                    <file>${reference.java3c8e2-web.dist-ear}</file>
+                    <path-in-war>/</path-in-war>
+                </library>
+                <library>
+                    <file>${reference.java3c8e2-web.dist-ear}</file>
+                    <path-in-war>/</path-in-war>
+                </library>
             </web-module-additional-libraries>
         </data>
         <references xmlns="http://www.netbeans.org/ns/ant-project-references/1">
@@ -45,6 +61,14 @@
                 <target>dist-ear</target>
                 <clean-target>clean-ear</clean-target>
                 <id>j2ee-module-car</id>
+            </reference>
+            <reference>
+                <foreign-project>java3c8e2-web</foreign-project>
+                <artifact-type>j2ee_ear_archive</artifact-type>
+                <script>build.xml</script>
+                <target>dist-ear</target>
+                <clean-target>clean-ear</clean-target>
+                <id>dist-ear</id>
             </reference>
         </references>
     </configuration>
