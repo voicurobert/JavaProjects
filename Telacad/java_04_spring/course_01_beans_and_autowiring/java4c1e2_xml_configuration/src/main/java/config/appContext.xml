@@ -1,0 +1,17 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+    <bean id="punct1" class="beans.Punct" primary="true"/>
+    <bean id="punct2" class="beans.Punct"/>
+
+    <bean id="produs" class="beans.Produs">
+        <property name="nume" value="bere"/>
+    </bean>
+    <bean id="ambalaj" class="beans.Ambalaj">
+        <property name="culoare" value="neagra"/>
+        <property name="produs" ref="produs"/>
+    </bean>
+
+</beans>
